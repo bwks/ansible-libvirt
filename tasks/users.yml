@@ -1,0 +1,13 @@
+---
+- name: Ensure libvirtd group is present
+  group:
+    name: "libvirtd"
+    state: present
+
+- name: Add users to libvird group
+  user:
+    name: "{{ item }}"
+    groups: "libvirtd"
+    append: True
+  with_items:
+    - "{{ libvirt_users }}"

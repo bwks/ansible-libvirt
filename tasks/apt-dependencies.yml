@@ -1,0 +1,11 @@
+---
+- name: APT - Install Required APT packages
+  apt:
+    name: "{{ item }}"
+    state: installed
+  with_items:
+    - "qemu-kvm"
+    - "libvirt-bin" 
+    - "virtinst" 
+    - "bridge-utils" 
+    - "cpu-checker"
