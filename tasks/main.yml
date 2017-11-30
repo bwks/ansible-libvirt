@@ -6,3 +6,5 @@
 - include: apt-dependencies.yml
   when: ansible_os_family == "Debian" 
 
+- include: libvirt-networks.yml
+
